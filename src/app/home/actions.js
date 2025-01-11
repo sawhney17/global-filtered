@@ -10,6 +10,7 @@ export async function getFeedData(feed) {
     techcrunch: 'https://techcrunch.com/feed/',
     bbc: 'http://feeds.bbci.co.uk/news/rss.xml',
     cnn: 'http://rss.cnn.com/rss/cnn_topstories.rss',
+    toi: "http://timesofindia.indiatimes.com/rssfeeds/296589292.cms",,
   };
 
   const feedUrl = feedUrls[feed] ?? feedUrls['techcrunch'];
