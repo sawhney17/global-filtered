@@ -13,7 +13,7 @@ export async function getFeedData(feed) {
     toi: "http://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
   };
 
-  const feedUrl = feedUrls[feed] ?? feedUrls['techcrunch'];
+  const feedUrl =  feedUrls[feed] ?? feedUrls['techcrunch'];
 
   try {
     const rssFeed = await parser.parseURL(feedUrl);
