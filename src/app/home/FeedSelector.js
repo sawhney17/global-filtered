@@ -71,7 +71,7 @@ export default function FeedSelector() {
             className="bg-white shadow-md rounded-md p-4 flex flex-col justify-between"
           >
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-            <p className="text-gray-700 text-sm mb-4">{item.contentSnippet}</p>
+            <p className="text-gray-700 text-sm mb-4">{item.contentSnippet ? item.contentSnippet : item.content ? item.content : item.description}</p>
             <a
               href={item.link}
               target="_blank"

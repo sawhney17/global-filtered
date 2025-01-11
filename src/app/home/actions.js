@@ -3,6 +3,7 @@
 // import Parser from 'rss-parser';
 
 import OpenAI from 'openai';
+import { filterRespones } from './openai_ai_proxy';
 
 const RSS_TO_JSON_API = 'https://api.rss2json.com/v1/api.json';
 
@@ -41,26 +42,13 @@ export async function getFeedData(feed) {
 }
 
 export async function filterFeed(feedItems) {
-  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   try {
     const filteredItems = [];
 
     for (const item of feedItems) {
       try {
-        const completion = await openai.chat.completions.create({
-          model: "gpt-4o-mini",
-          messages: [
-            {
-              role: "system",
-              content: "Look at the headline, if it is positive, say POSITIVE, otherwise say NEGATIVE. ONLY SAY THESE TWO WORDS.",
-            },
-            { role: "user", content: item.title },
-          ],
-        });
-
-        const response = completion.choices?.[0]?.message?.content || "";
-        console.log(response);
+        let response = await filterRespones(item);
 
         if (response.includes("POSITIVE")) {
           filteredItems.push(item);
