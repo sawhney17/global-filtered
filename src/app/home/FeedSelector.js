@@ -1,8 +1,7 @@
-// app/FeedSelector.jsx
 "use client";
 
 import { useState } from 'react';
-import { getFeedData } from './actions'; // Import the server action
+import { getFeedData } from './actions';
 
 export default function FeedSelector() {
   // Feed options
@@ -16,7 +15,7 @@ export default function FeedSelector() {
   const [rssItems, setRssItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Handle fetch using our server action
+
   const handleFetch = async () => {
     setLoading(true);
     try {
@@ -32,10 +31,10 @@ export default function FeedSelector() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 bg-gray-100">
-      {/* Header */}
+
       <h1 className="text-3xl font-bold mb-6">Global Filtered</h1>
 
-      {/* Feed Selector */}
+
       <div className="flex items-center space-x-4 mb-6">
         <label htmlFor="feedSelect" className="font-medium">
           Select an RSS Feed:
@@ -54,7 +53,7 @@ export default function FeedSelector() {
         </select>
 
         <button
-          className="bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700 transition"
+          className="hover:bg-black border-black border rounded-md text-black hover:text-white px-4 py-2  transition"
           onClick={handleFetch}
           disabled={loading}
         >
@@ -62,7 +61,7 @@ export default function FeedSelector() {
         </button>
       </div>
 
-      {/* RSS Results */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
         {rssItems.map((item, index) => (
           <div
