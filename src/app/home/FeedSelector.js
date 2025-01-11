@@ -9,6 +9,7 @@ export default function FeedSelector() {
     { label: 'TechCrunch', value: 'techcrunch' },
     { label: 'BBC News', value: 'bbc' },
     { label: 'CNN', value: 'cnn' },
+    { label: 'Times of India', value: 'timesofindia' },
   ];
 
   const [feed, setFeed] = useState(feedOptions[0].value);
