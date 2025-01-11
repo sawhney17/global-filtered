@@ -15,6 +15,7 @@ export default function FeedSelector() {
   const [feed, setFeed] = useState(feedOptions[0].value);
   const [rssItems, setRssItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [filteredFeed, setFilteredFeed] = useState([]);
 
 
   const handleFetch = async () => {

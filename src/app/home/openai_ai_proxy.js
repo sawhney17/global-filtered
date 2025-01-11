@@ -22,6 +22,7 @@ const completion = await openai.chat.completions.create({
 
 export const fetchRSSFeed = async (feedUrl) => {
     const parser = new Parser();
+    console.log(feedUrl)
     const rssFeed = await parser.parseURL(feedUrl);
     return rssFeed;
 }
