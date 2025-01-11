@@ -41,7 +41,7 @@ export async function getFeedData(feed) {
 }
 
 export async function filterFeed(feedItems) {
-  const openai = new OpenAI(process.env.OPENAI_API_KEY);
+  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   try {
     const filteredItems = [];
