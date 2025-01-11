@@ -18,7 +18,7 @@ export async function getFeedData(feed) {
   try {
     const rssFeed = await parser.parseURL(feedUrl);
     // Take the first 6 items
-    rssFeed.items = rssFeed.items.slice(0, 20);
+    rssFeed.items = rssFeed.items.slice(0, 10);
     console.log(rssFeed);
     // Filter and return RSS feed items
     const filteredItems = await filterFeed(rssFeed.items);
