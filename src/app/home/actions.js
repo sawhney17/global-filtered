@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import Parser from 'rss-parser';
 import OpenAI from 'openai';
