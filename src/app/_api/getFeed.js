@@ -10,6 +10,7 @@ export default async function handler(req, res) {
     'techcrunch': 'https://techcrunch.com/feed/',
     'bbc-news':  'http://feeds.bbci.co.uk/news/rss.xml',
     'cnn':       'http://rss.cnn.com/rss/cnn_topstories.rss',
+    'timesofindia': 'http://timesofindia.indiatimes.com/rssfeeds/296589292.cms',
     // Add more as needed
   };
 
