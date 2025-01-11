@@ -34,7 +34,7 @@ export default function FeedSelector() {
   return (
     <div className="flex flex-col items-center min-h-screen p-4 bg-gray-100">
 
-      <h1 className="text-3xl font-bold mb-6">Global Filtered</h1>
+      <h1 className="text-3xl font-bold mb-6 tracking-tight">Global Filtered</h1>
 
 
       <div className="flex items-center space-x-4 mb-6">
@@ -71,7 +71,7 @@ export default function FeedSelector() {
             className="bg-white shadow-md rounded-md p-4 flex flex-col justify-between"
           >
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-            <p className="text-gray-700 text-sm mb-4">{item.contentSnippet ? item.contentSnippet : item.content ? item.content : item.description}</p>
+            <p className="text-gray-700 text-sm mb-4" dangerouslySetInnerHTML={{__html :item.contentSnippet ? item.contentSnippet : item.content ? item.content : item.description}}></p>
             <a
               href={item.link}
               target="_blank"

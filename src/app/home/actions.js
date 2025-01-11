@@ -1,11 +1,11 @@
 "use client";
 
-// import Parser from 'rss-parser';
+import Parser from 'rss-parser';
 
 import OpenAI from 'openai';
-import { filterRespones } from './openai_ai_proxy';
+import { fetchRSSFeed, filterRespones } from './openai_ai_proxy';
 
-const RSS_TO_JSON_API = 'https://api.rss2json.com/v1/api.json';
+// const RSS_TO_JSON_API = 'https://api.rss2json.com/v1/api.json';
 
 export async function getFeedData(feed) {
   const feedUrls = {
@@ -15,15 +15,17 @@ export async function getFeedData(feed) {
   };
 
   const feedUrl = feedUrls[feed] ?? feedUrls['techcrunch'];
-  const apiEndpoint = `${RSS_TO_JSON_API}?rss_url=${encodeURIComponent(feedUrl)}`;
+  // const apiEndpoint = `${RSS_TO_JSON_API}?rss_url=${encodeURIComponent(feedUrl)}`;
+  // const rssFeed = await parser.parseURL(feedUrl);
 
   try {
-    const response = await fetch(apiEndpoint);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch feed: ${response.statusText}`);
-    }
+    // const response = await fetch(apiEndpoint);
+    // if (!response.ok) {
+    //   throw new Error(`Failed to fetch feed: ${response.statusText}`);
+    // }
 
-    const rssFeed = await response.json();
+    // const rssFeed = await response.json();
+    const rssFeed = await fetchRSSFeed(feedUrl);
     if (!rssFeed.items) {
       throw new Error('No items found in the feed.');
     }
