@@ -21,6 +21,7 @@ export default function FeedSelector() {
     try {
       const data = await getFeedData(feed); // calls the server action
       setRssItems(data || []);
+      console.log(data);
     } catch (error) {
       console.error(error);
       setRssItems([]);
