@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export default function Default() {
 const router = useRouter();
   return (
-    <>
+    <div className="relative overflow-hidden bg-white">
     {/* header!! */}
     {/* <Navbar></Navbar> */}
     <svg
@@ -70,6 +70,6 @@ const router = useRouter();
           </div>
           </div>
           </div>
-          </>
+          </div>
   );
 }
