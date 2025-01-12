@@ -10,7 +10,7 @@ const router = useRouter();
   return (
     <div className="relative overflow-hidden bg-white">
     {/* header!! */}
-    {/* <Navbar></Navbar> */}
+    <Navbar></Navbar>
     <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
