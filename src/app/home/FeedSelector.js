@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { getFeedData } from './actions';
+import { Selector } from '@/components/selector';
 
 export default function FeedSelector() {
   // Feed options
@@ -12,11 +13,12 @@ export default function FeedSelector() {
     { label: 'Times of India', value: 'timesofindia' },
   ];
 
+  // feature 1: instead of the default selector, we want to create a component that saves the user's preferences to it
+
   const [feed, setFeed] = useState(feedOptions[0].value);
   const [rssItems, setRssItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filteredFeed, setFilteredFeed] = useState([]);
-
 
   const handleFetch = async () => {
     setLoading(true);
@@ -34,7 +36,7 @@ export default function FeedSelector() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 bg-gray-100">
-
+      {feed}
       <h1 className="text-3xl font-bold mb-6 tracking-tight">Global Filtered</h1>
 
 
@@ -64,6 +66,9 @@ export default function FeedSelector() {
         </button>
       </div>
 
+
+          <h1>Custom Select</h1>
+          <Selector></Selector>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl">
         {rssItems.map((item, index) => (
